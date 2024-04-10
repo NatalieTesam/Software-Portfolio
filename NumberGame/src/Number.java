@@ -30,7 +30,5 @@ public class Number {
             System.out.println("Higher");
             return -1;
         }
-
     }
-
 }

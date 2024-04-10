@@ -1,14 +1,32 @@
+import java.io.File;
+import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
 
 public class NumberGame {
 
     public static void main(String[] args) {
+
+        // Creates the HighScores file to check if the new score is a record and to save the highest score reached.
+        // If the file is already created, it will not do anything.
+        try {
+            File highScoreFile = new File("HighScores.txt");
+            if (highScoreFile.createNewFile()) {
+                System.out.println("File created: " + highScoreFile.getName());
+            } else {
+                System.out.println(highScoreFile.getName() + " exists.");
+            }
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+
         // Variables
         boolean keepPlaying = true;
 
         // The game loop. While keep playing is true, the game will restart and play as many times as desired
         while (keepPlaying) {
+            HighScore score = new HighScore("HighScores.txt");
 
             // Starting dialogue
             System.out.println("Welcome to the number guessing game!");
@@ -31,6 +49,10 @@ public class NumberGame {
                 check = num.Check(input.nextInt());
                 guesses += 1;
             }
+
+            // First reads the current scores to update the values, then checks and writes the new score if it is higher.
+            score.ReadScore();
+            score.WriteScore(guesses);
 
             // Finishing dialogue.
             System.out.println("Congratulations! You found the number " + num.GetNumber() + " in " + guesses + " guesses!");
