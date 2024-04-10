@@ -4,10 +4,7 @@ This week I started to learn Java and created a Number Guessing game in it. I wa
 
 This is my first Java project and I wanted to create something that I could build on. I wanted it to be simple enough that I could start small, and add onto it as I learned more. 
 
-
-{Provide a link to your YouTube demonstration. It should be a 4-5 minute demo of the software running and a walkthrough of the code. Focus should be on sharing what you learned about the language syntax.}
-
-[Software Demo Video](http://youtube.link.goes.here)
+[Software Demo Video](https://youtu.be/Nbp5LmhdMiM)
 
 # Development Environment
 
